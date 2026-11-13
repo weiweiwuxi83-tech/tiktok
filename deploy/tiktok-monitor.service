@@ -1,0 +1,14 @@
+[Unit]
+Description=TikTok SEA ranking monitor
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/tiktok-sea-monitor
+ExecStart=/usr/bin/python3 run.py
+Restart=always
+RestartSec=10
+Environment=ECHOTIK_TOKEN=
+Environment=FASTMOSS_TOKEN=
+
+[Install]
+WantedBy=multi-user.target
